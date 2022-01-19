@@ -1,0 +1,6 @@
+<% content_for(:title, "Editing #{@rubric.name}") %>
+<p class="subtitle">
+  <%= link_to "Show this rubric", @rubric %>
+</p>
+
+<%= render "form", rubric: @rubric %>

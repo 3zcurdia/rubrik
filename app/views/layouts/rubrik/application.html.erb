@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rubrik</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag    "rubrik/application", media: "all" %>
+  <%= stylesheet_link_tag "rubrik/application", media: "all" %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 </head>
 <body>
-
-<%= yield %>
-
+  <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <%= link_to root_path, class: 'navbar-item' do %>
+        <p class="title is-4 has-text-white">
+          <span class="icon"><i class="fas fa-university"></i></span><span> Rubrik</span>
+        </p>
+      <% end %>
+      <a role="button" class="navbar-burger" data-action="navbar#toggleMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu" data-navbar-target="menu">
+      <div class="navbar-start">
+        <%= link_to "Rubrics", rubrics_path, class: 'navbar-item' %>
+      </div>
+    </div>
+  </nav>
+  <section class="rubrik section main <%= controller_name %>">
+    <% if flash[:notice].present? %>
+    <div class="notification is-primary is-light">
+      <button class="delete"></button>
+      <%= notice %>
+    </div>
+    <% end %>
+    <% if flash[:alert].present? %>
+    <div class="notification is-warning is-light">
+      <button class="delete"></button>
+      <%= alert %>
+    </div>
+    <% end %>
+    <div class="container">
+      <% if content_for?(:title) %>
+        <h1 class="title"><%= yield(:title) %></h1>
+      <% end %>
+      <%= yield %>
+    </div>
+  </section>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </body>
 </html>

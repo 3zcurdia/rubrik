@@ -2,7 +2,14 @@
 
 require "rubrik/version"
 require "rubrik/engine"
+require "rubrik/configuration"
 
 module Rubrik
-  # Your code goes here...
+  def self.configuration
+    @configuration ||= Configuration.new
+  end
+
+  def self.configure
+    yield(configuration)
+  end
 end

@@ -1,0 +1,9 @@
+<p class="subtitle">
+  <%= link_to "Edit this rubric", edit_rubric_path(@rubric) %> |
+  <%= link_to "Back to rubrics", rubrics_path %>
+  <%= button_to @rubric, class: "button is-danger", method: :delete do %>
+     <span class="icon"><i class="far fa-trash-alt"></i></span><span>Destroy</span>
+  <% end %>
+</p>
+
+<%= render @rubric %>

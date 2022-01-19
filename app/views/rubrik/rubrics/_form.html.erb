@@ -1,0 +1,16 @@
+<%= form_with(model: rubric) do |form| %>
+  <div class="field">
+    <%= form.label :name, class: "label" %>
+    <div class="control">
+      <%= form.text_field :name, class: "input #{'is-danger' if rubric.errors.key?(:name)}" %>
+    </div>
+    <%= error_message_tag rubric, :name %>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <%= link_to "Cancel", :back, class: "button"%>
+      <%= form.submit class: "button is-primary" %>
+    </div>
+  </div>
+<% end %>
