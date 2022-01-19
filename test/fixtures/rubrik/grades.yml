@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rubric: one
+  gradeable: one
+  total_points: 1
+
+two:
+  rubric: two
+  gradeable: two
+  total_points: 1

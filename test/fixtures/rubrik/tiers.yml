@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  grade: one
+  category: one
+  points: 1
+  notes: MyText
+
+two:
+  grade: two
+  category: two
+  points: 1
+  notes: MyText
